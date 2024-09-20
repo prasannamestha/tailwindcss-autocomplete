@@ -16,7 +16,7 @@ await build({
   entryPoints: ["src/index.ts", "src/utils.ts"],
   bundle: true,
   treeShaking: true,
-  format: "cjs",
+  format: "esm",
   platform: "node",
   minify: true,
   external: Object.keys({
@@ -25,7 +25,7 @@ await build({
   }).filter((name) => name !== "tailwindcss"),
   logLevel,
   outdir: "./dist",
-  sourcemap: true,
+  sourcemap: false,
   target: ["es2020"],
   loader: { ".css": "text" },
   define: {
